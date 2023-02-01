@@ -15,9 +15,9 @@
     </header>
     <main class="container-fluid border border-dark">
         <div class="row">
-            <div class="col-12 col-md-3 col-xl-3 search-col border border-dark">
+            <div class="col-12 col-md-3 col-xl-3 border ">
                 <h2>Search for a city</h2>
-                <div class="container-input">
+                <div class="input-group">
                     <input type="text" class="form-control user-input">
                     <button class="btn btn-primary btn-lg">
                         <i>Search</i>
@@ -28,8 +28,10 @@
                 </div>
                 <div class="col-12 col-md-9 col-xl-9"> <!-- Main container for the 5 day forecast -->
                     <div class="row">
-                        <div class="card text-dark bg-secondary mb-3" style="max-width: 18rem;">
-                            <h2>Phoenix</h2>
+                        <div class="card text-dark bg-secondary mb-3 todaysTemp" style="max-width: 18rem;">
+                            <h2 class="cityName">Phoenix </h2>
+                            <p id="currentDay"></p>
+                            
                             <h3></h3><!-- Todays date will go here -->
                             <p></p>
                             <p></p>
@@ -68,6 +70,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/dayjs@1/plugin/utc.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
+
     <script src="./assets/js/script.js"></script>
 </body>
 </html>
