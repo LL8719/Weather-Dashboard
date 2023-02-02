@@ -17,25 +17,32 @@
         <div class="row">
             <div class="col-12 col-md-3 col-xl-3 border ">
                 <h2>Search for a city</h2>
-                <div class="input-group">
-                    <input type="text" class="form-control user-input">
-                    <button class="btn btn-primary btn-lg search-button">
-                        <i>Search</i>
-                      </button>
-                    </div>
+
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control city" placeholder="..." aria-label="City" aria-describedby="button-addon2">
+                    <div class="btn-div">
+                    <button class="btn  btn-primary search-button" type="button" id="button-addon2">Search</button>
+                </div>
+                </div>
+
                     <div class="container listOfCities"></div> <!-- Empty div for the cities -->
 <!--  -->           
                 </div>
-                <div class="col-12 col-md-9 col-xl-9"> <!-- Main container for the 5 day forecast -->
+                 <!-- Main container for the 5 day forecast -->
+                <div class="col-12 col-md-9 col-xl-9"> 
+
                     <div class="row">
+                <!-- Todays Display card -->
                         <div class="card text-dark bg-secondary mb-3 todaysTemp" style="max-width: 18rem;">
-                            <h2 class="cityName">Phoenix<img class="weatherEmj" src="https://openweathermap.org/img/wn/01d@2x.png"></h2>
+                            <h2 class="cityName"></h2>
                             <h4 id="currentDay"></h4>
+                            <img class="weatherEmj" src="https://openweathermap.org/img/wn/01d@2x.png">
+               <!-- Temp Card Details -->
                             <div class="tempDetail card-body">
                                 <h3 class="card-title">Weather label</h3>
-                                <p class="card-text">Temp</p>
-                                <p class="card-text">wind</p>
-                                <p class="card-text">humidity</p>
+                                <p class="card-text">Temperature:</p>
+                                <p class="card-text">Wind speed:</p>
+                                <p class="card-text">Humidity:</p>
                                 
 
                         </div>
