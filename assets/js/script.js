@@ -1,13 +1,16 @@
 var apiKey = 'bb54b8b606113e3da27c5bafd590d42f ';
 //Todays weather from API
 function todaysWeather(city) {
+	//variable for API for 1 day weather
 	var weatherUrl =
 		'https://api.openweathermap.org/data/2.5/weather?q=' +
 		city +
 		'&units=imperial&appid=' +
 		apiKey;
+	//fetch API url
 	fetch(weatherUrl)
 		.then((response) => {
+			//If the user types an invalid city
 			if (!response.ok) {
 				alert('No Weather Found!');
 			}
@@ -20,13 +23,13 @@ function todaysWeather(city) {
 }
 //Display of weather on the main card for today
 function displayWeather(data) {
+	//create variables for the data we are grabbing
 	var name = data.name;
 	var icon = data.weather[0].icon;
 	var temp = data.main.temp;
 	var humidity = data.main.humidity;
-
 	var wind = data.wind.speed;
-
+	//Pass data from variables to the html
 	$('.card-city').text('Weather in ' + name);
 	$('.card-icon').attr(
 		'src',
@@ -36,8 +39,9 @@ function displayWeather(data) {
 	$('.card-wind').text('Wind speed: ' + wind + ' MPH');
 	$('.card-humid').text('Humidity: ' + humidity + '%');
 }
-
+//five day forecast
 function forecastWeather(city) {
+	//API link changed from 'weather' to 'forecast
 	var forecastUrl =
 		'https://api.openweathermap.org/data/2.5/forecast?q=' +
 		city +
@@ -46,13 +50,14 @@ function forecastWeather(city) {
 	fetch(forecastUrl)
 		.then((response) => response.json())
 		.then((data) => {
+			//created empty array to pass the data after looping over
 			var daysArr = [];
 			for (var i = 0; i < data.list.length; i++) {
 				if (data.list[i].dt_txt.includes('12:00:00')) {
 					daysArr.push(data.list[i]);
 				}
 			}
-			//loop over Data to append to 5 day weather cards
+			//loop over the array to append to 5 day weather cards
 			for (i = 0; i < daysArr.length; i++) {
 				var newPDate = $('<h4>').text(daysArr[i].dt_txt.split(' ')[0]);
 				var newPTemp = $('<p>').text(
@@ -86,13 +91,17 @@ function saveCities() {
 	localStorage.setItem('searchHist', JSON.stringify(searchHist));
 }
 // Makes new button from user search
+
 function makeButton() {
+	//Clears the Html inside of the boxes to avoid duplicates
+	$('.box').empty();
 	//grabs the user input
 	city = $('#search-input').val().trim();
 	//creates button with user input
 	var newBtn = $('<button>').text(city);
 	//adds class for style
 	newBtn.addClass('btn  btn-primary');
+	newBtn.attr('style', 'margin:3px; width: 50%');
 
 	newBtn.on('click', () => {
 		// todaysWeather(newBtn.text());
