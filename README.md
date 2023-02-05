@@ -23,7 +23,7 @@ MIT License
 ## link
 
 The following image shows the web application's appearance:
-![My Portfolio](https://ll8719.github.io/Weather-Dashboard)
+![Weather-DashBoard](https://ll8719.github.io/Weather-Dashboard)
 
 ## Screenshot
 
