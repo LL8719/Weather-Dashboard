@@ -50,14 +50,16 @@ function forecastWeather(city) {
 	fetch(forecastUrl)
 		.then((response) => response.json())
 		.then((data) => {
+			console.log(data);
 			//created empty array to pass the data after looping over
 			var daysArr = [];
 			for (var i = 0; i < data.list.length; i++) {
-				if (data.list[i].dt_txt.includes('12:00:00')) {
+				if (data.list[i].dt_txt.includes('15:00:00')) {
 					daysArr.push(data.list[i]);
 				}
 			}
 			//loop over the array to append to 5 day weather cards
+
 			for (i = 0; i < daysArr.length; i++) {
 				var newPDate = $('<h4>').text(daysArr[i].dt_txt.split(' ')[0]);
 				var newPTemp = $('<p>').text(
