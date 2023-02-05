@@ -1,0 +1,18 @@
+h1.text-center.mb5.p-3 {}
+
+header {
+    background-color: #001253;
+    color: #fff;
+}
+
+.col-12.col-md-9.col-xl-9.five-day-cont {
+    margin-left: 9em;
+}
+
+body {
+    background-color: #B4CDE6;
+}
+
+.col-12.col-md-3.col-xl-3.border {
+    background-color: #7895B2;
+}

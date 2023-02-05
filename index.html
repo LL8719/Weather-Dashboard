@@ -11,21 +11,21 @@
 </head>
 <body> 
     <header>
-        <h1>Weather Dashboard</h1>
+        <h1 class="text-center mb5 p-3">Weather Dashboard</h1>
     </header>
-    <main class="container-fluid border border-dark">
-        <div class="row">
-            <div class="col-12 col-md-3 col-xl-3 border ">
+    <main class="container-fluid   p-2">
+        <div class="row mt-3">
+            <div class="col-12 col-md-3 col-xl-2  ">
                 <h2>Search for a city</h2>
 
                 <div class="input-group mb-3">
-                    <input type="text" class="form-control search-input" placeholder="Search" aria-label="City" aria-describedby="button-addon2">
+                    <input id="search-input" type="text" class="form-control search-input" placeholder="Search" aria-label="City" aria-describedby="button-addon2">
                     <div class="btn-div">
                     <button class="btn  btn-primary search-button" type="button" id="button-addon2">Search</button>
                 </div>
                 </div>
 
-                    <div class="container" id="listOfCities"></div> <!-- Empty div for the cities -->
+                    <div class="col align-self-start container width:10%" id="listOfCities"></div> <!-- Empty div for the cities -->
 <!--  -->           
                 </div>
                  <!-- Main container for the 5 day forecast -->
